@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <title>@jiviteshjain</title>
+        <meta charset="UTF-8">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Catamaran:900" rel="stylesheet">
+        <link rel="icon" href="../img/icon.png" type="image/x-icon">
+        <link type="text/css" rel="stylesheet" href="../css/css.css">
+    </head>
+    <body class="formpage">
+        <div class="nav sticky">
+            
+            <span class="navlink" id="navtext">
+                <a href="#"><span id="navat">@</span>jivitesh<span id="navjain">jain</span></a>
+            </span>
+            
+
+            <a class="navlink" onclick="clickCounter()" id="like"><span id="likecount"></span><span class="emojibig">👍</span></a>
+
+            <a href="index.html" class="navlink hover">Icebreaking</a>
+            
+            <a class="navlink hover" href="strengths.html">My Strengths</a>
+            
+            <a class="navlink cur" href="form.html">You and Me</a>
+        </div>
+
+        <div class="textsection whitestyle smaller">
+            <p class="texthead">Before you scroll down</p>
+            <div class="photo">
+                <img class="imginbw originalsize" src="../img/warning.png">
+                <p class="textbody" class="textwithimg">
+                    Some parts of this website, including most of this page, are for learning about and testing new features, and hence may not seem sensible.<br>
+                    No data entered on the forms on this page is sent to or stored on the server.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="textsection black">
+            <p class="texthead">Rate my skills</p>
+
+            <form id="form" onsubmit="handleData()">
+                <label for="yourname">What's your name?</label>
+                <input type="text" required title="Name (Required)"
+                 name="yourname" class="formelement formtextinput" id="yourname" placeholder="Name">
+
+                <label for="skill">What, according to you, am I good at?</label>
+                <select name="skill"  title="Skill (Required)" id="skill" class="formelement formselect" required>
+                        <!-- <option value="" disabled selected hidden>Skill</option> -->
+                    <optgroup label="Expressing Oneself">
+                        <option value="Conversing and Debating">Conversing and Debating</option>
+                        <option value="Writing">Writing</option>
+                        <option value="Leadership">Leadership</option>
+                    </optgroup>
+                    <optgroup label="Logic">
+                        <option value="Logical and Analytical Reasoning">Logical and Analytical Reasoning</option>
+                        <option value="Problem Solving">Problem Solving</option>
+                    </optgroup>
+                    <optgroup label="Computer Science">
+                        <option value="Operating Systems">Operating Systems</option>
+                        <option value="Bash Programming">Bash Programming</option>
+                        <option value="Web Design and Development" selected>Web Design and Development</option>
+                        <option value="Competitive Programming">Competitive Programming</option>
+                        <option value="Data Structures and Algorithms">Data Structures and Algorithms</option>
+                        <option value="C and C++">C and C++</option>
+                        <option value="Python">Python</option>
+                        <option value="Java">Java</option>
+                        <option value="Javascript">Javascript</option>
+                        <option value="Coding Conventions and Quality">Coding Conventions and Quality</option>
+                        <option value="Android Development">Android Development</option>
+                        <option value="Artificial Intelligence">Artificial Intelligence</option>
+                        <option value="Database Management">Database Management</option>
+                        <option value="MATLAB">MATLAB</option>
+                    </optgroup>
+                    <optgroup label="Languages">
+                        <option value="English">English</options>
+                        <option value="Hindi">Hindi</option>
+                        <option value="German">German</option>
+                    </optgroup>
+                    <optgroup label="Extra-curriculars">
+                        <option value="Art">Art</option>
+                    </optgroup>
+                    <optgroup label="Science and Math">
+                        <option value="Pure Sciences">Pure Sciences</option>
+                        <option value="Mathematics">Mathematics</option>
+                    </optgroup>
+                </select>
+                <label for="proficiency">And how good exactly?</label>
+                <select name="proficiency" title="Proficiency (Required)" id="proficiency" class="formelement formselect" required>
+                    <!-- <option value="" disabled selected hidden>Proficiency</option> -->
+                    <option>Proficient</option>
+                    <option>Good</option>
+                    <option>Okay-ish</option>
+                </select>
+                <input type="submit" class="formelement formbutton" value="Submit"> <!--onclick="handleData()">-->
+            </div>
+        </div>
+
+        <div class="textsection whitestyle">
+            <p class="texthead">Recommendations</p>
+            <table class="formtable">
+                <thead class="formtablehead">
+                    <tr>
+                        <td id="leftcell" rowspan="2">Name</td>
+                        <td id="topcell" colspan="2">Recommendation</td>
+                    </tr>
+                    <tr>
+                        <td id="middlecell">Skill</td>
+                        <td id="rightcell">Proficiency</td>
+                    </tr>
+                </thead>
+                <tbody class="formtablebody"></tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            
+            <span id="bottext">
+                <a href="index.html"><span id="navat">@</span>jivitesh<span id="navjain">jain</span></a>
+            </span>
+            
+            <a class="social" id="mail" href="mailto:jiviteshjain@outlook.com"></a>
+            <a class="social" id="github" href="https://www.github.com/jiviteshjain" target="_blank"></a>
+            <a class="social" id="facebook" href="https://www.facebook.com/jivitesh.jain.121" target="_blank"></a>
+        </div>
+
+
+        <!-- <div class="test"></div> -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="../js/js.js"></script>
+    </body>
+</html>
