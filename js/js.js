@@ -8,7 +8,10 @@ window.onload = function(){
 
 	formInit();
 }
-window.onresize = getNavbarOffset;
+window.onresize = function(){
+	getNavbarOffset();
+	stickyNavbar();
+}
 
 window.onscroll = stickyNavbar;
 

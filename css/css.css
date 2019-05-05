@@ -89,30 +89,37 @@ a{
     background-position: center;
 }
 
-#me{ /*THE WORD ME*/
+#me{ /*HI, I'M JIVITESH*/
     display: inline-block;
     color: white;
     text-align: left;
     font-family: 'Pacifico', cursive;
-    font-size: 2000%;
+    font-size: 750%;
     padding-left: 5%;
-    padding-top: 10%;
+    padding-top: 0.1%;
+    margin-top: 0;
     /* margin-top: -50px; */
     /* margin-top: -5%; */
-    margin-bottom: 0;
-    padding-bottom: 0;
-    line-height: 70%;
+    /* margin-bottom: 0;
+    /* padding-bottom: 0; */
+    line-height: 98%;
+    vertical-align: bottom;
     /* float: left; */
 
     /* -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 5s; /*Firefox < 16*/
-    -ms-animation: fadein 5s; /*Internet Explorer*/
-     -o-animation: fadein 5s; /*Opera < 12.1*/
-        animation: fadein 5s;
+     -ms-animation: fadein 5s; /*Internet Explorer*/
+      -o-animation: fadein 5s; /*Opera < 12.1*/
+         animation: fadein 5s;
+
+    -moz-animation-fill-mode: backwards;
+     -ms-animation-fill-mode: backwards;
+      -o-animation-fill-mode: backwards;
+         animation-fill-mode: backwards;
 }
 
 #name{ /*@JIVITESHJAIN*/
-    display: inline-block;
+    /* display: inline-block;
     color: rgb(255, 255, 255);
     text-align: left;
     font-family: 'Raleway', sans-serif;
@@ -120,14 +127,54 @@ a{
     padding-left: 6%;
     margin-top: 0;
     padding-top: 0.1%;
-    letter-spacing: 5px;
+    letter-spacing: 5px; */
     /* float: left; */
 
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    font-family: 'Raleway', sans-serif;
+    font-size: 200%;
+    padding-left: 5%;
+    padding-top: 10%;
+    margin-bottom: 2%;
+    padding-bottom: 0;
+    margin-top: 7%;
+    
+    letter-spacing: 5px;
+
     /* -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 5s; /*Firefox < 16*/
-        -ms-animation: fadein 5s; /*Internet Explorer*/
-         -o-animation: fadein 5s; /*Opera < 12.1*/
-            animation: fadein 5s; 
+    -moz-animation: fadein 5s ease 3s 1 normal; /*Firefox < 16*/
+     -ms-animation: fadein 5s ease 3s 1 normal; /*Internet Explorer*/
+      -o-animation: fadein 5s ease 3s 1 normal; /*Opera < 12.1*/
+         animation: fadein 5s ease 3s 1 normal;
+    
+    -moz-animation-fill-mode: backwards;
+     -ms-animation-fill-mode: backwards;
+      -o-animation-fill-mode: backwards;
+         animation-fill-mode: backwards;
+}
+
+#desc{ /*Description*/
+    display: inline-block;
+    color: #4fb3bf;
+    text-align: left;
+    font-family: 'Raleway', sans-serif;
+    font-size: 210%;
+    padding-left: 5%;
+    margin-top: 0;
+    padding-top: 1.5%;
+
+    /* -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 5s ease 1.5s 1 normal; /*Firefox < 16*/
+     -ms-animation: fadein 5s ease 1.5s 1 normal; /*Internet Explorer*/
+      -o-animation: fadein 5s ease 1.5s 1 normal; /*Opera < 12.1*/
+         animation: fadein 5s ease 1.5s 1 normal; 
+    
+    -moz-animation-fill-mode: backwards;
+     -ms-animation-fill-mode: backwards;
+      -o-animation-fill-mode: backwards;
+         animation-fill-mode: backwards;
 }
 
 #at{
@@ -138,6 +185,32 @@ a{
 #jain{
     font-weight: bold;
     font-size: 95%
+}
+
+@media screen and (max-width: 810px){
+    #name{
+        font-size: 150%;
+    }
+    
+    #me{
+        font-size: 500%;
+    }
+
+    #desc{
+        font-size: 175%
+    }
+}
+
+@media screen and (max-height: 600px){
+    #name{
+        margin-top: 1.25%;
+    }
+}
+
+@media screen and (max-height: 500px){
+    #welcome{
+        display: none;
+    }
 }
 
 /*SCROLLDOWN BUTTON*/
@@ -159,10 +232,12 @@ a{
   background-size: 14px auto;
   border-radius: 50%;
   z-index: 2;
-  -webkit-animation: bounce 2s infinite 2s, fadein 15s;
-  animation: bounce 2s infinite 2s, fadein 15s;
+  -webkit-animation: bounce 2s infinite 2s, fadein 5s 1 3s;
+          animation: bounce 2s infinite 2s, fadein 5s 1 3s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
   -webkit-transition: all .2s ease-in;
-  transition: all .2s ease-in;
+          transition: all .2s ease-in;
 }
 
 .scroll-down:before {
