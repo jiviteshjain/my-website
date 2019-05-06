@@ -89,6 +89,12 @@ a{
     background-position: center;
 }
 
+@media screen and (max-width: 810px){
+    #welcome{
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url(../img/marble-bg.jpg);
+    }
+}
+
 #me{ /*HI, I'M JIVITESH*/
     display: inline-block;
     color: white;
@@ -107,10 +113,10 @@ a{
     /* float: left; */
 
     /* -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 5s; /*Firefox < 16*/
-     -ms-animation: fadein 5s; /*Internet Explorer*/
-      -o-animation: fadein 5s; /*Opera < 12.1*/
-         animation: fadein 5s;
+    -moz-animation: fadein 3s; /*Firefox < 16*/
+     -ms-animation: fadein 3s; /*Internet Explorer*/
+      -o-animation: fadein 3s; /*Opera < 12.1*/
+         animation: fadein 3s;
 
     -moz-animation-fill-mode: backwards;
      -ms-animation-fill-mode: backwards;
@@ -144,10 +150,10 @@ a{
     letter-spacing: 5px;
 
     /* -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 5s ease 3s 1 normal; /*Firefox < 16*/
-     -ms-animation: fadein 5s ease 3s 1 normal; /*Internet Explorer*/
-      -o-animation: fadein 5s ease 3s 1 normal; /*Opera < 12.1*/
-         animation: fadein 5s ease 3s 1 normal;
+    -moz-animation: fadein 3s ease 3s 1 normal; /*Firefox < 16*/
+     -ms-animation: fadein 3s ease 3s 1 normal; /*Internet Explorer*/
+      -o-animation: fadein 3s ease 3s 1 normal; /*Opera < 12.1*/
+         animation: fadein 3s ease 3s 1 normal;
     
     -moz-animation-fill-mode: backwards;
      -ms-animation-fill-mode: backwards;
@@ -166,10 +172,10 @@ a{
     padding-top: 1.5%;
 
     /* -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 5s ease 1.5s 1 normal; /*Firefox < 16*/
-     -ms-animation: fadein 5s ease 1.5s 1 normal; /*Internet Explorer*/
-      -o-animation: fadein 5s ease 1.5s 1 normal; /*Opera < 12.1*/
-         animation: fadein 5s ease 1.5s 1 normal; 
+    -moz-animation: fadein 3s ease 1.5s 1 normal; /*Firefox < 16*/
+     -ms-animation: fadein 3s ease 1.5s 1 normal; /*Internet Explorer*/
+      -o-animation: fadein 3s ease 1.5s 1 normal; /*Opera < 12.1*/
+         animation: fadein 3s ease 1.5s 1 normal; 
     
     -moz-animation-fill-mode: backwards;
      -ms-animation-fill-mode: backwards;
@@ -190,10 +196,13 @@ a{
 @media screen and (max-width: 810px){
     #name{
         font-size: 150%;
+        letter-spacing: 3px;
     }
     
     #me{
         font-size: 500%;
+        padding-top: 3%;
+        padding-bottom: 3%;
     }
 
     #desc{
@@ -232,8 +241,8 @@ a{
   background-size: 14px auto;
   border-radius: 50%;
   z-index: 2;
-  -webkit-animation: bounce 2s infinite 2s, fadein 5s 1 3s;
-          animation: bounce 2s infinite 2s, fadein 5s 1 3s;
+  -webkit-animation: bounce 2s infinite 2s, fadein 3s 1 3s;
+          animation: bounce 2s infinite 2s, fadein 3s 1 3s;
   -webkit-animation-fill-mode: backwards;
           animation-fill-mode: backwards;
   -webkit-transition: all .2s ease-in;
@@ -467,6 +476,14 @@ a.navlink:active{
     margin: 5px 0 5px 0;
 }
 
+.quote{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 125%;
+    font-style: italic;
+    color: #4b4b4bd0;
+    margin: 25px 0 5px 0;
+}
+
 .textbody{
     font-size: 125%;
     margin: 15px 0 5px 0;
@@ -551,6 +568,12 @@ li.pin{
 
 .color{
     background-image: url(../img/color.jpg);
+}
+
+@media screen and (max-width: 810px){
+    .textsection{
+        padding: 50px 12% !important;
+    }
 }
 
 /* SLIDESHOW */
