@@ -89,30 +89,43 @@ a{
     background-position: center;
 }
 
-#me{ /*THE WORD ME*/
+@media screen and (max-width: 810px){
+    #welcome{
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url(../img/marble-bg.jpg);
+    }
+}
+
+#me{ /*HI, I'M JIVITESH*/
     display: inline-block;
     color: white;
     text-align: left;
     font-family: 'Pacifico', cursive;
-    font-size: 2000%;
+    font-size: 750%;
     padding-left: 5%;
-    padding-top: 10%;
+    padding-top: 0.1%;
+    margin-top: 0;
     /* margin-top: -50px; */
     /* margin-top: -5%; */
-    margin-bottom: 0;
-    padding-bottom: 0;
-    line-height: 70%;
+    /* margin-bottom: 0;
+    /* padding-bottom: 0; */
+    line-height: 98%;
+    vertical-align: bottom;
     /* float: left; */
 
     /* -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 5s; /*Firefox < 16*/
-    -ms-animation: fadein 5s; /*Internet Explorer*/
-     -o-animation: fadein 5s; /*Opera < 12.1*/
-        animation: fadein 5s;
+    -moz-animation: fadein 3s; /*Firefox < 16*/
+     -ms-animation: fadein 3s; /*Internet Explorer*/
+      -o-animation: fadein 3s; /*Opera < 12.1*/
+         animation: fadein 3s;
+
+    -moz-animation-fill-mode: backwards;
+     -ms-animation-fill-mode: backwards;
+      -o-animation-fill-mode: backwards;
+         animation-fill-mode: backwards;
 }
 
 #name{ /*@JIVITESHJAIN*/
-    display: inline-block;
+    /* display: inline-block;
     color: rgb(255, 255, 255);
     text-align: left;
     font-family: 'Raleway', sans-serif;
@@ -120,14 +133,54 @@ a{
     padding-left: 6%;
     margin-top: 0;
     padding-top: 0.1%;
-    letter-spacing: 5px;
+    letter-spacing: 5px; */
     /* float: left; */
 
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    font-family: 'Raleway', sans-serif;
+    font-size: 200%;
+    padding-left: 5%;
+    padding-top: 10%;
+    margin-bottom: 2%;
+    padding-bottom: 0;
+    margin-top: 7%;
+    
+    letter-spacing: 5px;
+
     /* -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 5s; /*Firefox < 16*/
-        -ms-animation: fadein 5s; /*Internet Explorer*/
-         -o-animation: fadein 5s; /*Opera < 12.1*/
-            animation: fadein 5s; 
+    -moz-animation: fadein 3s ease 3s 1 normal; /*Firefox < 16*/
+     -ms-animation: fadein 3s ease 3s 1 normal; /*Internet Explorer*/
+      -o-animation: fadein 3s ease 3s 1 normal; /*Opera < 12.1*/
+         animation: fadein 3s ease 3s 1 normal;
+    
+    -moz-animation-fill-mode: backwards;
+     -ms-animation-fill-mode: backwards;
+      -o-animation-fill-mode: backwards;
+         animation-fill-mode: backwards;
+}
+
+#desc{ /*Description*/
+    display: inline-block;
+    color: #4fb3bf;
+    text-align: left;
+    font-family: 'Raleway', sans-serif;
+    font-size: 210%;
+    padding-left: 5%;
+    margin-top: 0;
+    padding-top: 1.5%;
+
+    /* -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 3s ease 1.5s 1 normal; /*Firefox < 16*/
+     -ms-animation: fadein 3s ease 1.5s 1 normal; /*Internet Explorer*/
+      -o-animation: fadein 3s ease 1.5s 1 normal; /*Opera < 12.1*/
+         animation: fadein 3s ease 1.5s 1 normal; 
+    
+    -moz-animation-fill-mode: backwards;
+     -ms-animation-fill-mode: backwards;
+      -o-animation-fill-mode: backwards;
+         animation-fill-mode: backwards;
 }
 
 #at{
@@ -138,6 +191,35 @@ a{
 #jain{
     font-weight: bold;
     font-size: 95%
+}
+
+@media screen and (max-width: 810px){
+    #name{
+        font-size: 150%;
+        letter-spacing: 3px;
+    }
+    
+    #me{
+        font-size: 500%;
+        padding-top: 3%;
+        padding-bottom: 3%;
+    }
+
+    #desc{
+        font-size: 175%
+    }
+}
+
+@media screen and (max-height: 600px){
+    #name{
+        margin-top: 1.25%;
+    }
+}
+
+@media screen and (max-height: 500px){
+    #welcome{
+        display: none;
+    }
 }
 
 /*SCROLLDOWN BUTTON*/
@@ -159,10 +241,12 @@ a{
   background-size: 14px auto;
   border-radius: 50%;
   z-index: 2;
-  -webkit-animation: bounce 2s infinite 2s, fadein 15s;
-  animation: bounce 2s infinite 2s, fadein 15s;
+  -webkit-animation: bounce 2s infinite 2s, fadein 3s 1 3s;
+          animation: bounce 2s infinite 2s, fadein 3s 1 3s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
   -webkit-transition: all .2s ease-in;
-  transition: all .2s ease-in;
+          transition: all .2s ease-in;
 }
 
 .scroll-down:before {
@@ -392,6 +476,14 @@ a.navlink:active{
     margin: 5px 0 5px 0;
 }
 
+.quote{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 125%;
+    font-style: italic;
+    color: #4b4b4bd0;
+    margin: 25px 0 5px 0;
+}
+
 .textbody{
     font-size: 125%;
     margin: 15px 0 5px 0;
@@ -476,6 +568,12 @@ li.pin{
 
 .color{
     background-image: url(../img/color.jpg);
+}
+
+@media screen and (max-width: 810px){
+    .textsection{
+        padding: 50px 12% !important;
+    }
 }
 
 /* SLIDESHOW */
