@@ -51,16 +51,6 @@ function stickyNavbar(){
 	}
 }
 
-// NAVBAR HOVER
-// JABARDASTI: comment this
-$(document).ready(function(){
-	var navbar = document.getElementsByClassName("hover");
-	for(let i = 0, len = navbar.length; i<len; i++){
-		navbar[i].addEventListener("mouseenter", () => navbar[i].classList.add("jabardasti"));
-		navbar[i].addEventListener("mouseleave", () => navbar[i].classList.remove("jabardasti"));
-	}
-});
-
 // PARALLAX
 // $(document).ready(function(){
 //   $('div[data-type="parallax"]').each(function(){
@@ -78,10 +68,16 @@ $(document).ready(function(){
 //   });    
 // });
 
+// TYPEFORM
+function showTypeform(){
+	$('#typeform-parent').slideToggle(400);
+}
+
+
 // SLIDESHOW
 var slideIndex = 1;
 if($("body").hasClass("home")){
-  showSlides(slideIndex);
+	showSlides(slideIndex);
 }
 
 function plusSlides(n){
