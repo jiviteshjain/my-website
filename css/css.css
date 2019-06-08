@@ -567,17 +567,11 @@ li.pin{
 
 .connect{
     background-color: white;
-    background-image: url(../img/undraw-connect.svg);
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4)), url(../img/undraw-connect.svg);
     background-size: contain;
     background-attachment: local;
     background-position-x: -5rem;
     background-position-y: -3rem;
-}
-
-.background-fade{
-    border-radius: 1rem;
-    background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 12px 15px rgba(255, 255, 255, 0.5);
 }
 
 @media screen and (max-width: 810px){
