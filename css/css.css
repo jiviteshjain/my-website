@@ -587,7 +587,7 @@ li.pin{
 }
 
 .contacticons i{
-    margin: 10px;
+    margin: 0.5rem;
     font-size: 2.5rem;
     color: #555555;
 }
@@ -905,10 +905,16 @@ label{
     justify-content: flex-end;
     align-items: center;
     /* flex-wrap: nowrap; */
-    padding: 35px 6% 35px 6%;
+    padding: 2rem 6% 2rem 6%;
     margin: 0;
     color: white;
-    width: 88%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footericons i{
+    margin: 0.2rem;
+    font-size: 2rem;
 }
 
 #bottext{
@@ -926,6 +932,19 @@ label{
     height: min-content;
 }
 
+@media screen and (max-width: 810px){
+    .footer{
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-content: center;
+        min-height: 9rem;
+    }
+
+    #bottext{
+        margin: 0;
+    }
+}
+/* 
 .social{
     display: block;
     width: 40px;
@@ -947,4 +966,4 @@ label{
 }
 #facebook{
     background-image: url(../img/facebook.svg);
-}
+} */
