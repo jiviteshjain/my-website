@@ -664,15 +664,26 @@ li.pin{
     opacity: 0.8 !important;
     background: white !important;
     border: 3px solid #00838f !important;
-  }
+}
 
-  .flickity-page-dots .dot.is-selected {
+.flickity-page-dots{
+    bottom: -60px;
+}
+
+.flickity-page-dots .dot.is-selected {
     border-color: #e91e63 !important;
-  }
+}
 
-  .flickity-button-icon{
-      fill: #00838f !important;
-  }
+.flickity-button-icon{
+    fill: #00838f !important;
+}
+
+/* .caption {
+    background: #FAFAFA;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+} */
 
 
 /* SLIDESHOW */

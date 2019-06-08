@@ -74,13 +74,22 @@ function showTypeform(){
 }
 
 // FLICKITY
-$('.main-carousel').flickity({
+var $carousel = $('.main-carousel').flickity({
 	// options
 	cellAlign: 'center',
 	contain: true,
 	autoPlay: true,
 	fullscreen: true
-  });
+});
+
+// var caption = $('.caption');
+// // Flickity instance
+// var flkty = $carousel.data('flickity');
+
+// $carousel.on( 'select.flickity', function() {
+// 	// set image caption using img's alt
+// 	$caption.text( $(flkty.selectedElement).attr('data-cap') )
+// });
 
 
 // SLIDESHOW
