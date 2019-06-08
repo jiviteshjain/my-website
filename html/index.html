@@ -12,8 +12,10 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i&display=swap" rel="stylesheet">
         <link rel="icon" href="../img/icon.png" type="image/x-icon">
         <link type="text/css" rel="stylesheet" href="../css/css.css">
-        <link type="text/css" rel="stylesheet" href="../PhotoSwipe/photoswipe.css">
-        <link type="text/css" rel="stylesheet" href="../PhotoSwipe/default-skin/default-skin.css">
+        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/flickity-fullscreen@1/fullscreen.css">
+        <!-- <link type="text/css" rel="stylesheet" href="../PhotoSwipe/photoswipe.css">
+        <link type="text/css" rel="stylesheet" href="../PhotoSwipe/default-skin/default-skin.css"> -->
     </head>
     
     <body class="home">
@@ -37,7 +39,7 @@
             
             <a class="navlink hover" href="strengths.html">My Strengths</a>
             
-            <a class="navlink hover"href="../resume-jiviteshjain.pdf" download="resume-jiviteshjain">R&eacute;sum&eacute;</a>
+            <a class="navlink hover"href="../resume-jiviteshjain.pdf" download="resume-jiviteshjain">My R&eacute;sum&eacute;</a>
         </div>
 
 
@@ -94,10 +96,29 @@
         </div>
         </div>
 
-        <div class="textsection whitestyle">
+        <div class="textsection whitestyle with-carousel">
             <p class="texthead">My friends</p>
             <p class="textsubhead">...and other animals.</p>
-            <div class="slidecontainer">
+
+            <div class="main-carousel">
+                <div class="carousel-cell">
+                    <img src="../img/slide-1.jpg" alt="Learning, growing, falling and getting up; all with an element of mischief and fun.">
+                </div>
+                <div class="carousel-cell">
+                    <img src="../img/slide-2.jpg" alt="Best friends forever.">
+                </div>
+                <div class="carousel-cell">
+                    <img src="../img/slide-3.jpg" alt="Memories of some amazing time spent in a land far away.">
+                </div>
+                <div class="carousel-cell">
+                    <img src="../img/slide-4.jpg" alt="Here come the 'other animals'.">
+                </div>
+                <div class="carousel-cell">
+                    <img src="../img/slide-5.jpg" alt="Another one.">
+                </div>
+            </div>
+
+            <!-- <div class="slidecontainer">
                 <div class="slideimage slidefade">
                     <div class="slidenum">1/5</div>
                     <img src="../img/slide-1.jpg" class="slidepic" onclick="plusSlides(1)">
@@ -138,7 +159,7 @@
                 <span class="slidedot" onclick="currentSlide(3)"></span>
                 <span class="slidedot" onclick="currentSlide(4)"></span>
                 <span class="slidedot" onclick="currentSlide(5)"></span>
-            </div>
+            </div> -->
         </div>
 
         <div id="contactus" class="textsection connect">
@@ -175,9 +196,13 @@
         <!-- <div class="test"></div> -->
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+        <script src="https://unpkg.com/flickity-fullscreen@1/fullscreen.js"></script>
+
         <script src="../js/js.js"></script>
-        <script src="../PhotoSwipe/photoswipe.min.js"></script>
-        <script src="../PhotoSwipe/photoswipe-ui-default.min.js"></script>
+        <!-- <script src="../PhotoSwipe/photoswipe.min.js"></script>
+        <script src="../PhotoSwipe/photoswipe-ui-default.min.js"></script> -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        
     </body>
 </html>

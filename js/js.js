@@ -73,38 +73,47 @@ function showTypeform(){
 	$('#typeform-parent').slideToggle(400);
 }
 
+// FLICKITY
+$('.main-carousel').flickity({
+	// options
+	cellAlign: 'center',
+	contain: true,
+	autoPlay: true,
+	fullscreen: true
+  });
+
 
 // SLIDESHOW
-var slideIndex = 1;
-if($("body").hasClass("home")){
-	showSlides(slideIndex);
-}
+// var slideIndex = 1;
+// if($("body").hasClass("home")){
+// 	showSlides(slideIndex);
+// }
 
-function plusSlides(n){
-	showSlides(slideIndex = slideIndex + n);
-}
+// function plusSlides(n){
+// 	showSlides(slideIndex = slideIndex + n);
+// }
 
-function currentSlide(n){
-	showSlides(slideIndex = n);
-}
+// function currentSlide(n){
+// 	showSlides(slideIndex = n);
+// }
 
-function showSlides(n){
-	var slides = document.getElementsByClassName("slideimage");
-	var dots = document.getElementsByClassName("slidedot");
-	if(n > slides.length)
-		slideIndex = 1;
-	if(n < 1)
-		slideIndex = slides.length;
+// function showSlides(n){
+// 	var slides = document.getElementsByClassName("slideimage");
+// 	var dots = document.getElementsByClassName("slidedot");
+// 	if(n > slides.length)
+// 		slideIndex = 1;
+// 	if(n < 1)
+// 		slideIndex = slides.length;
 	
-		for(var i = 0; i < slides.length; i++)
-			slides[i].style.display = "none";
+// 		for(var i = 0; i < slides.length; i++)
+// 			slides[i].style.display = "none";
 
-		for(var j = 0; j < dots.length; j++)
-			dots[j].className = dots[j].className.replace("active", "");
+// 		for(var j = 0; j < dots.length; j++)
+// 			dots[j].className = dots[j].className.replace("active", "");
 		
-		slides[slideIndex - 1].style.display = "block";
-		dots[slideIndex - 1].className = dots[slideIndex - 1].className + " slidedotactive";
-}
+// 		slides[slideIndex - 1].style.display = "block";
+// 		dots[slideIndex - 1].className = dots[slideIndex - 1].className + " slidedotactive";
+// }
 
 // FORM
 
