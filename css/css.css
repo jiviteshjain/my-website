@@ -666,10 +666,6 @@ li.pin{
     border: 3px solid #00838f !important;
 }
 
-.flickity-page-dots{
-    bottom: -60px;
-}
-
 .flickity-page-dots .dot.is-selected {
     border-color: #e91e63 !important;
 }
