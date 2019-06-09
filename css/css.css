@@ -713,6 +713,44 @@ li.pin {
     fill: #00838f !important;
 }
 
+/* SKILLS PAGE */
+
+.pinktext {
+    color: #e91e63;
+    font-weight: bold;
+}
+
+.greentext {
+    color: #00838f;
+    font-weight: bold;
+}
+
+.greytext {
+    color: #555555;
+    font-weight: bold;
+}
+
+
+.with-sketch {
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box;
+}
+
+.with-sketch p {
+    padding: 0 20%;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 810px) {
+    .with-sketch p {
+        padding: 0 10% !important;
+        box-sizing: border-box !important;
+    }
+}
+
+
 /* .caption {
     background: #FAFAFA;
     margin: 0;

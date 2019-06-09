@@ -1,3 +1,16 @@
+var waitForFinalEvent = (function () {
+    var timers = {};
+    return function (callback, ms, uniqueId) {
+        if (!uniqueId) {
+            uniqueId = "Don't call this twice without a uniqueId";
+        }
+        if (timers[uniqueId]) {
+            clearTimeout(timers[uniqueId]);
+        }
+        timers[uniqueId] = setTimeout(callback, ms);
+    };
+})();
+
 function Ball(x, y, r, str, rgbcolor, small = false) {
     var options = {
         angle: PI / 4,
@@ -84,26 +97,26 @@ const rgbPink = [233, 30, 90];
 const rgbGreen = [0, 131, 143];
 const rgbGrey = [80, 80, 80]
 
-function setup() {
-    var canvas = createCanvas(800, 600);
-    canvas.parent('sketch-holder')
-    angleMode(RADIANS);
-    ellipseMode(RADIUS);
-    rectMode(CENTER);
+function canvasSize() {
+    var canvaswidth = $('#sketch-holder').width();
+    var canvasheight = window.innerHeight;
 
-    engine = Engine.create();
-    world = engine.world;
+    if (window.innerWidth <= 810) {
+        canvasheight = canvasheight * 1.1;
+    } else {
+        canvasheight = canvasheight - 150;
+    }
+    return [canvaswidth, canvasheight];
+}
 
-    var canvasmouse = Mouse.create(canvas.elt);
-    canvasmouse.pixelRatio = pixelDensity();
-    options = {
-        mouse: canvasmouse
-    };
-    var mConstraint = MouseConstraint.create(engine, options);
-    World.add(world, mConstraint);
+$(window).resize(function () {
+    waitForFinalEvent(function () {
+        alert('Page will be reloaded to resize and re-render the physics engine.');
+        location.reload();
+    }, 500, "sketchresize");
+});
 
-    // b = new Ball(200, 200, 50, 'sdjf', [233, 30, 90]);
-
+function addBodies() {
     // Edge Boundaries
     var g = new Box(width / 2, -46, width, 100, true);
     bounds.push(g);
@@ -194,6 +207,36 @@ function setup() {
 
     var b = new Ball(20 + width / 2, 90, 45, 'Sketching and Painting'.toUpperCase(), rgbGreen, true);
     skills.push(b);
+
+    var b = new Ball(-40 + width / 2, 90, 50, 'Debating and writing'.toUpperCase(), rgbGreen, true);
+    skills.push(b);
+}
+
+function setup() {
+    var canvasheight, canvaswidth;
+    [canvaswidth, canvasheight] = canvasSize();
+    var canvas = createCanvas(canvaswidth, canvasheight);
+    canvas.style('display', 'block');
+    canvas.parent('sketch-holder')
+
+    angleMode(RADIANS);
+    ellipseMode(RADIUS);
+    rectMode(CENTER);
+
+    engine = Engine.create();
+    world = engine.world;
+
+    var canvasmouse = Mouse.create(canvas.elt);
+    canvasmouse.pixelRatio = pixelDensity();
+    options = {
+        mouse: canvasmouse
+    };
+    var mConstraint = MouseConstraint.create(engine, options);
+    World.add(world, mConstraint);
+
+    // b = new Ball(200, 200, 50, 'sdjf', [233, 30, 90]);
+    addBodies();
+
 }
 
 function draw() {
