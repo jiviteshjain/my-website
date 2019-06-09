@@ -96,7 +96,7 @@ const rgbGreen = [0, 131, 143];
 const rgbGrey = [80, 80, 80];
 
 function canvasSize() {
-  var canvaswidth = $("#sketch-holder").width() - 30;
+  var canvaswidth = $("#sketch-holder").width() - 15;
   var canvasheight = window.innerHeight - 110;
 
   // if (window.innerWidth <= 810) {
@@ -369,7 +369,7 @@ function setup() {
   var canvasheight, canvaswidth;
   [canvaswidth, canvasheight] = canvasSize();
   var canvas = createCanvas(canvaswidth, canvasheight);
-  canvas.style("display", "block");
+  // canvas.style("display", "block");
   canvas.parent("sketch-holder");
 
   angleMode(RADIANS);
