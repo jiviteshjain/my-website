@@ -99,21 +99,26 @@ const rgbGrey = [80, 80, 80]
 
 function canvasSize() {
     var canvaswidth = $('#sketch-holder').width();
-    var canvasheight = window.innerHeight;
+    var canvasheight = window.innerHeight - 150;
 
-    if (window.innerWidth <= 810) {
-        canvasheight = canvasheight * 1.1;
-    } else {
-        canvasheight = canvasheight - 150;
-    }
+    // if (window.innerWidth <= 810) {
+    //     canvasheight = canvasheight * 1.1;
+    // } else {
+    //     canvasheight = canvasheight - 150;
+    // }
     return [canvaswidth, canvasheight];
 }
 
+var mywidth = $(window).width();
 $(window).resize(function () {
-    waitForFinalEvent(function () {
-        alert('Page will be reloaded to resize and re-render the physics engine.');
-        location.reload();
-    }, 500, "sketchresize");
+    if ($(this).width() != mywidth) {
+        mywidth = $(this).width();
+        waitForFinalEvent(function () {
+            alert('Page will be reloaded to resize and re-render the physics engine.');
+            location.reload();
+        }, 500, "sketchresize");
+    }
+
 });
 
 function addBodies() {
