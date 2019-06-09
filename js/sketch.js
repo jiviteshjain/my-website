@@ -96,7 +96,7 @@ const rgbGreen = [0, 131, 143];
 const rgbGrey = [80, 80, 80];
 
 function canvasSize() {
-  var canvaswidth = $("#sketch-holder").width() - 10;
+  var canvaswidth = $("#sketch-holder").width() - 30;
   var canvasheight = window.innerHeight - 110;
 
   // if (window.innerWidth <= 810) {
@@ -365,6 +365,7 @@ function addBodies() {
 }
 
 function setup() {
+  frameRate(60);
   var canvasheight, canvaswidth;
   [canvaswidth, canvasheight] = canvasSize();
   var canvas = createCanvas(canvaswidth, canvasheight);
