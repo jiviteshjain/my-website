@@ -18,12 +18,15 @@ new p5(function (p) {
 
         p.beginShape();
         for (var x = 0; x < p.width; x = x + 0.1) {
-            var y = p.map(p.noise(x / 400, t), 0, 1, 0, 40);
+            var y = p.map(p.noise(x / 400, t), 0, 1, 0, 30);
             p.vertex(x, p.height - y);
         }
         p.vertex(p.width, p.height);
         p.vertex(0, p.height);
         p.endShape(p.CLOSE);
         t = t + 0.005;
+        if (t < 0) {
+            t = 0;
+        }
     }
 }, 'footer-animation');
