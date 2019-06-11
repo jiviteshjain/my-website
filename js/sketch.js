@@ -1,6 +1,6 @@
-var waitForFinalEvent = (function() {
+var waitForFinalEvent = (function () {
   var timers = {};
-  return function(callback, ms, uniqueId) {
+  return function (callback, ms, uniqueId) {
     if (!uniqueId) {
       uniqueId = "Don't call this twice without a uniqueId";
     }
@@ -11,9 +11,8 @@ var waitForFinalEvent = (function() {
   };
 })();
 
-function Ball(x, y, r, str, rgbcolor, small = false) {
+function Ball(p, x, y, r, str, rgbcolor, small = false) {
   var options = {
-    angle: PI / 4,
     density: 10,
     restitution: 0.6,
     friction: 0.5
@@ -21,38 +20,40 @@ function Ball(x, y, r, str, rgbcolor, small = false) {
   this.body = Bodies.circle(x, y, r, options);
   this.r = r;
   this.str = str;
+  this.p = p;
   World.add(world, this.body);
 
-  this.show = function() {
+  this.show = function () {
+    var p = this.p;
     var pos = this.body.position;
     var angle = this.body.angle;
 
-    push();
-    translate(pos.x, pos.y);
-    rotate(angle);
+    p.push();
+    p.translate(pos.x, pos.y);
+    p.rotate(angle);
 
-    strokeWeight(5);
-    stroke(...rgbcolor);
-    ellipse(0, 0, this.r);
+    p.strokeWeight(5);
+    p.stroke(...rgbcolor);
+    p.ellipse(0, 0, this.r);
 
-    noStroke();
-    fill(...rgbcolor);
+    p.noStroke();
+    p.fill(...rgbcolor);
     // textStyle(BOLD);
-    textFont("Open Sans Condensed");
-    textAlign(CENTER, CENTER);
-    textSize(18);
+    p.textFont("Open Sans Condensed");
+    p.textAlign(p.CENTER, p.CENTER);
+    p.textSize(18);
     if (small) {
-      textSize(15);
-      textStyle(BOLD);
+      p.textSize(15);
+      p.textStyle(p.BOLD);
     }
     var side = Math.sqrt(2) * this.r;
-    text(this.str, 0, 0, side, side);
+    p.text(this.str, 0, 0, side, side);
 
-    pop();
+    p.pop();
   };
 }
 
-function Box(x, y, w, h, static) {
+function Box(p, x, y, w, h, static) {
   var options = {
     isStatic: static,
     friction: 0.5,
@@ -61,19 +62,21 @@ function Box(x, y, w, h, static) {
   this.body = Bodies.rectangle(x, y, w, h, options);
   this.w = w;
   this.h = h;
+  this.p = p;
   World.add(world, this.body);
 
-  this.show = function() {
+  this.show = function () {
+    var p = this.p;
     var pos = this.body.position;
     var angle = this.body.angle;
 
-    push();
-    translate(pos.x, pos.y);
-    rotate(angle);
+    p.push();
+    p.translate(pos.x, pos.y);
+    p.rotate(angle);
 
-    rect(0, 0, this.w, this.h);
+    p.rect(0, 0, this.w, this.h);
 
-    pop();
+    p.pop();
   };
 }
 
@@ -108,11 +111,11 @@ function canvasSize() {
 }
 
 var mywidth = $(window).width();
-$(window).resize(function() {
+$(window).resize(function () {
   if ($(this).width() != mywidth) {
     mywidth = $(this).width();
     waitForFinalEvent(
-      function() {
+      function () {
         alert(
           "Page will be reloaded to resize and re-render the physics engine."
         );
@@ -124,22 +127,25 @@ $(window).resize(function() {
   }
 });
 
-function addBodies() {
+function addBodies(p) {
   // Edge Boundaries
-  var g = new Box(width / 2, -46, width, 100, true);
+  let width = p.width;
+  let height = p.height;
+  var g = new Box(p, width / 2, -46, width, 100, true);
   bounds.push(g);
 
-  var g = new Box(width / 2, height + 46, width, 100, true);
+  var g = new Box(p, width / 2, height + 46, width, 100, true);
   bounds.push(g);
 
-  var g = new Box(-46, height / 2, 100, height, true);
+  var g = new Box(p, -46, height / 2, 100, height, true);
   bounds.push(g);
 
-  var g = new Box(width + 46, height / 2, 100, height, true);
+  var g = new Box(p, width + 46, height / 2, 100, height, true);
   bounds.push(g);
 
   // Balls for Achievements
   var b = new Ball(
+    p,
     -20 + width / 2,
     50,
     65,
@@ -149,6 +155,7 @@ function addBodies() {
   achievements.push(b);
 
   var b = new Ball(
+    p,
     20 + width / 2,
     50,
     55,
@@ -158,6 +165,7 @@ function addBodies() {
   achievements.push(b);
 
   var b = new Ball(
+    p,
     -40 + width / 2,
     50,
     60,
@@ -167,6 +175,7 @@ function addBodies() {
   achievements.push(b);
 
   var b = new Ball(
+    p,
     40 + width / 2,
     50,
     75,
@@ -177,6 +186,7 @@ function addBodies() {
   achievements.push(b);
 
   var b = new Ball(
+    p,
     -60 + width / 2,
     50,
     62,
@@ -186,6 +196,7 @@ function addBodies() {
   achievements.push(b);
 
   var b = new Ball(
+    p,
     60 + width / 2,
     50,
     70,
@@ -196,6 +207,7 @@ function addBodies() {
   achievements.push(b);
 
   var b = new Ball(
+    p,
     -40 + width / 2,
     70,
     75,
@@ -206,6 +218,7 @@ function addBodies() {
   achievements.push(b);
 
   var b = new Ball(
+    p,
     40 + width / 2,
     70,
     65,
@@ -216,6 +229,7 @@ function addBodies() {
   achievements.push(b);
 
   var b = new Ball(
+    p,
     -60 + width / 2,
     70,
     65,
@@ -226,6 +240,7 @@ function addBodies() {
 
   // Balls for Involvements
   var b = new Ball(
+    p,
     -80 + width / 2,
     50,
     65,
@@ -236,6 +251,7 @@ function addBodies() {
   involvements.push(b);
 
   var b = new Ball(
+    p,
     80 + width / 2,
     50,
     60,
@@ -246,6 +262,7 @@ function addBodies() {
   involvements.push(b);
 
   var b = new Ball(
+    p,
     -20 + width / 2,
     70,
     65,
@@ -255,6 +272,7 @@ function addBodies() {
   involvements.push(b);
 
   var b = new Ball(
+    p,
     20 + width / 2,
     70,
     55,
@@ -264,13 +282,14 @@ function addBodies() {
   involvements.push(b);
 
   // Balls for Skills
-  var b = new Ball(-80 + width / 2, 70, 30, "C/C++".toUpperCase(), rgbGreen);
+  var b = new Ball(p, -80 + width / 2, 70, 30, "C/C++".toUpperCase(), rgbGreen);
   skills.push(b);
 
-  var b = new Ball(80 + width / 2, 70, 40, "Python".toUpperCase(), rgbGreen);
+  var b = new Ball(p, 80 + width / 2, 70, 40, "Python".toUpperCase(), rgbGreen);
   skills.push(b);
 
   var b = new Ball(
+    p,
     -20 + width / 2,
     30,
     40,
@@ -280,6 +299,7 @@ function addBodies() {
   skills.push(b);
 
   var b = new Ball(
+    p,
     20 + width / 2,
     30,
     55,
@@ -290,6 +310,7 @@ function addBodies() {
   skills.push(b);
 
   var b = new Ball(
+    p,
     -40 + width / 2,
     30,
     65,
@@ -300,6 +321,7 @@ function addBodies() {
   skills.push(b);
 
   var b = new Ball(
+    p,
     40 + width / 2,
     30,
     51,
@@ -310,6 +332,7 @@ function addBodies() {
   skills.push(b);
 
   var b = new Ball(
+    p,
     -60 + width / 2,
     30,
     40,
@@ -319,6 +342,7 @@ function addBodies() {
   skills.push(b);
 
   var b = new Ball(
+    p,
     60 + width / 2,
     30,
     40,
@@ -327,10 +351,11 @@ function addBodies() {
   );
   skills.push(b);
 
-  var b = new Ball(-80 + width / 2, 30, 42, "Arduino".toUpperCase(), rgbGreen);
+  var b = new Ball(p, -80 + width / 2, 30, 42, "Arduino".toUpperCase(), rgbGreen);
   skills.push(b);
 
   var b = new Ball(
+    p,
     80 + width / 2,
     30,
     60,
@@ -340,10 +365,11 @@ function addBodies() {
   );
   skills.push(b);
 
-  var b = new Ball(-20 + width / 2, 90, 30, "Git".toUpperCase(), rgbGreen);
+  var b = new Ball(p, -20 + width / 2, 90, 30, "Git".toUpperCase(), rgbGreen);
   skills.push(b);
 
   var b = new Ball(
+    p,
     20 + width / 2,
     90,
     45,
@@ -354,6 +380,7 @@ function addBodies() {
   skills.push(b);
 
   var b = new Ball(
+    p,
     -40 + width / 2,
     90,
     50,
@@ -364,43 +391,45 @@ function addBodies() {
   skills.push(b);
 }
 
-function setup() {
-  frameRate(60);
-  var canvasheight, canvaswidth;
-  [canvaswidth, canvasheight] = canvasSize();
-  var canvas = createCanvas(canvaswidth, canvasheight);
-  // canvas.style("display", "block");
-  canvas.parent("sketch-holder");
+new p5(function (p) {
+  p.setup = function () {
+    p.frameRate(60);
+    var canvasheight, canvaswidth;
+    [canvaswidth, canvasheight] = canvasSize();
+    var canvas = p.createCanvas(canvaswidth, canvasheight);
+    // canvas.style("display", "block");
+    canvas.parent("sketch-holder");
 
-  angleMode(RADIANS);
-  ellipseMode(RADIUS);
-  rectMode(CENTER);
+    p.angleMode(p.RADIANS);
+    p.ellipseMode(p.RADIUS);
+    p.rectMode(p.CENTER);
 
-  engine = Engine.create();
-  world = engine.world;
+    engine = Engine.create();
+    world = engine.world;
 
-  var canvasmouse = Mouse.create(canvas.elt);
-  canvasmouse.pixelRatio = pixelDensity();
-  options = {
-    mouse: canvasmouse
-  };
-  var mConstraint = MouseConstraint.create(engine, options);
-  World.add(world, mConstraint);
+    var canvasmouse = Mouse.create(canvas.elt);
+    canvasmouse.pixelRatio = p.pixelDensity();
+    options = {
+      mouse: canvasmouse
+    };
+    var mConstraint = MouseConstraint.create(engine, options);
+    World.add(world, mConstraint);
 
-  // b = new Ball(200, 200, 50, 'sdjf', [233, 30, 90]);
-  addBodies();
-}
-
-function draw() {
-  background(255);
-  Engine.update(engine, (delta = 1000 / 60));
-  for (ball of achievements) {
-    ball.show();
+    // b = new Ball(200, 200, 50, 'sdjf', [233, 30, 90]);
+    addBodies(p);
   }
-  for (ball of involvements) {
-    ball.show();
+
+  p.draw = function () {
+    p.background(255);
+    Engine.update(engine, (delta = 1000 / 60));
+    for (ball of achievements) {
+      ball.show();
+    }
+    for (ball of involvements) {
+      ball.show();
+    }
+    for (ball of skills) {
+      ball.show();
+    }
   }
-  for (ball of skills) {
-    ball.show();
-  }
-}
+}, 'sketch-holder');
