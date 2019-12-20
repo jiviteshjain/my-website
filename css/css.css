@@ -802,6 +802,16 @@ li.pin {
     }
 }
 
+.spacestyle {
+    background-image: url(../img/space.jpg);
+    color: white;
+}
+
+.content-urls-404 {
+    font-weight: bolder;
+    color: whitesmoke;
+}
+
 /* .caption {
     background: #FAFAFA;
     margin: 0;
