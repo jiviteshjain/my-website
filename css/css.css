@@ -810,7 +810,7 @@ li.pin {
 
 #content-urls-404 {
     font-weight: bolder;
-    color: #e91e63;
+    color: #e91e63 !important;
     text-align: center !important;
 }
 
