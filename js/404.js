@@ -43,7 +43,6 @@ function getEditDistance(a, b) {
             dp[i][j] = -1;
         }
     }
-    debugger;
     return _getEditDistance(a, b, n - 1, m - 1, dp);
 }
 
@@ -59,9 +58,10 @@ var links = [
     "/web/resume-jiviteshjain.pdf"
 ];
 
+var currenturl= window.location.pathname;
+
 window.onload = function () {
 
-    var currenturl = window.location.pathname;
     links.sort(compare)
 
     let para = this.document.getElementById("content-urls-404");

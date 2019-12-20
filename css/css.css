@@ -804,12 +804,14 @@ li.pin {
 
 .spacestyle {
     background-image: url(../img/space.jpg);
+    background-position: center;
     color: white;
 }
 
-.content-urls-404 {
+#content-urls-404 {
     font-weight: bolder;
     color: whitesmoke;
+    text-align: center;
 }
 
 /* .caption {
