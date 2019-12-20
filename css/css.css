@@ -766,7 +766,6 @@ li.pin {
     padding: 50px 12% !important;
     align-items: center;
     align-content: center;
-    font-size: inherit !important;
 }
 
 .img-404{
@@ -779,13 +778,7 @@ li.pin {
 .text-404 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    font-size: inherit !important;
-    
-}
-
-.content-404 {
-    text-align: justify;
+    justify-content: center;   
 }
 
 @media screen and (max-width: 810px) {
