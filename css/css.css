@@ -758,11 +758,6 @@ li.pin {
 }
 
 /* 404 PAGE */
-.push-down {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
 
 .div-404{
     display: flex;
@@ -771,7 +766,6 @@ li.pin {
     padding: 50px 12% !important;
     align-items: center;
     align-content: center;
-    flex-grow: 1;
 }
 
 .img-404{
@@ -800,12 +794,6 @@ li.pin {
         width: 100% !important;
         margin: 0 !important;
     }
-}
-
-.spacestyle {
-    background-image: url(../img/space.jpg);
-    background-position: center;
-    color: white;
 }
 
 #content-urls-404 {
