@@ -810,8 +810,8 @@ li.pin {
 
 #content-urls-404 {
     font-weight: bolder;
-    color: whitesmoke;
-    text-align: center;
+    color: #e91e63;
+    text-align: center !important;
 }
 
 /* .caption {

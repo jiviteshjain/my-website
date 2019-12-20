@@ -60,16 +60,14 @@ var links = [
 
 var currenturl= window.location.pathname;
 
-window.onload = function () {
+links.sort(compare)
 
-    links.sort(compare)
-
-    let para = this.document.getElementById("content-urls-404");
-    para.innerHTML = ""
-    for (link of links) {
-        para.innerHTML = para.innerHTML + "<a href='" + baseurl + link + "'>" + link + "</a><br>"
-    }
+let para = this.document.getElementById("content-urls-404");
+para.innerHTML = ""
+for (link of links) {
+    para.innerHTML = para.innerHTML + "<a href='" + baseurl + link + "'>" + link + "</a><br>"
 }
+
 
 
 
