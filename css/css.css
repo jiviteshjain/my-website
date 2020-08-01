@@ -665,6 +665,10 @@ li.pin {
     color: black;
 }
 
+.fa-twitter:hover {
+    color: #00acee;
+}
+
 #typeform-parent {
     display: none;
     padding-top: 0px;
